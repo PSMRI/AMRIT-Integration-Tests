@@ -4,18 +4,22 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "playwright test",
-    "test:headed": "PLAYWRIGHT_HEADLESS=false playwright test"
-  },
+  "register": "echo Running Registration... && npx playwright test tests/aam/registration.spec.js --project=chromium --headed",
+  "nurse": "echo Running Nurse... && npx playwright test tests/aam/nurse.spec.js --project=chromium --headed",
+  "doctor": "echo Running Doctor... && npx playwright test tests/aam/doctor.spec.js --project=chromium --headed",
+  "labtech": "echo Running Lab Technician... && npx playwright test tests/aam/labtech.spec.js --project=chromium --headed",
+  "pharmacist": "echo Running Pharmacist... && npx playwright test tests/aam/pharmacist.spec.js --project=chromium --headed",
+  "doctorverify": "echo Running Doctor Verify... && npx playwright test tests/aam/doctor.verify.spec.js --project=chromium --headed",
+  "full-flow": "powershell -ExecutionPolicy Bypass -File ./aam-full-flow.ps1"
+},
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "module",
   "devDependencies": {
     "@faker-js/faker": "^9.9.0",
-    "@playwright/test": "^1.54.2",
+    "@playwright/test": "^1.56.1",
     "@types/node": "^24.0.1",
     "dotenv": "^16.6.1"
-  },
-  "dependencies": {}
+  }
 }

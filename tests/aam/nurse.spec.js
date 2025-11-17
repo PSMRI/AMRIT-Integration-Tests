@@ -1,5 +1,5 @@
 import { test, expect } from "@playwright/test";
-import { login } from "../../../helpers/login.js";
+import { login } from "../../helpers/login.js";
 import { fileURLToPath } from "url";
 import * as path from "path";
 
@@ -12,7 +12,7 @@ test("Nurse provides consultation to the beneficiary", async ({ page }) => {
   await login(page);
   await page.getByRole("button", { name: "Continue" }).click();
 
-  const filePath = path.resolve(__dirname, "../../../beneficiary.json");
+  const filePath = path.resolve(__dirname, "../../beneficiary.json");
   let beneficiaryData;
   try {
     beneficiaryData = JSON.parse(fs.readFileSync(filePath, "utf-8"));

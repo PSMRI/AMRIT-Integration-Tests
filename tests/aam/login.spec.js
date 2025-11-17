@@ -1,5 +1,5 @@
 import { test, expect } from "@playwright/test";
-import { login } from "../../../helpers/login.js";
+import { login } from "../../helpers/login.js";
 
 test("Login with invalid credentials shows error", async ({ page }) => {
   await page.goto(`${process.env.BASE_URL}/aam`);
